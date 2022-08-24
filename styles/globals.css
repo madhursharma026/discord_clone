@@ -1,0 +1,131 @@
+*{
+    overflow: hidden;
+}
+
+.LeftSideBtn {
+    color: forestgreen;
+    background: #36393F;
+    border-radius: 100%;
+}
+
+.LeftSideBtn:hover {
+    color: white;
+    background: forestgreen;
+    border-radius: 15px;
+}
+
+.addFriendBtnText {
+    color: gray;
+    font-weight: 600;
+}
+
+.addFriendBtn:hover .addFriendBtnText {
+    color: rgb(173, 173, 173);
+    font-weight: 600;
+}
+
+@media (max-width: 1799px) {
+    .rightOptions {
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 1749px) {
+    .rightOptions {
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1680px) {
+    .rightOptions {
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .rightOptions {
+        padding-right: 40px;
+    }
+}
+
+@media (max-width: 1534px) {
+    .rightOptions {
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 1560px) {
+    .rightOptions {
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .rightOptions {
+        padding-right: 70px;
+    }
+}
+
+@media (max-width: 1335px) {
+    .rightOptions {
+        padding-right: 80px;
+    }
+}
+
+@media (max-width: 1270px) {
+    .rightOptions {
+        padding-right: 90px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .rightOptions {
+        padding-right: 100px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .rightOptions {
+        padding-right: 110px;
+    }
+}
+
+@media (max-width: 1070px) {
+    .rightOptions {
+        padding-right: 120px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .rightOptions {
+        padding-right: 130px;
+    }
+}
+
+@media (max-width: 991px) {
+    .leftOptions {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .rightOptionShifting {
+        float: right;
+    }
+}
+
+@media (max-width: 768px) {
+    .moreMenu {
+        display: none;
+    }
+}
+
+@media (min-width: 1799px) {
+    .rightOptions {
+        padding-right: 0px;
+    }
+}
+
+
+
+
