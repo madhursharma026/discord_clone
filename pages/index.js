@@ -16,8 +16,10 @@ export default function Home() {
             <LeftSidebar2 />
           </div>
         </div>
-        <div className="col-10" style={{ marginLeft: "302px", width: "85%" }}>
+        <div className="col-10" style={{ marginLeft: "302px", paddingRight:"0", marginRight:"0" }}>
+          <div style={{maxWidth:"100%", width:"auto"}}>
           <MainContent />
+          </div>
         </div>
       </div>
     </>

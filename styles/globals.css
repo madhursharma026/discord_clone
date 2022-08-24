@@ -106,6 +106,9 @@
     .leftOptions {
         display: none;
     }
+    .hideAfterLGScrn{
+        display: none;
+    }
 }
 
 @media (min-width: 992px) {
