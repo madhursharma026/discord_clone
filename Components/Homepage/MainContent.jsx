@@ -13,8 +13,40 @@ import {
     faGift,
     faSmile
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+
+import ListItemIcon from '@mui/material/ListItemIcon';
+
+import SendIcon from '@mui/icons-material/Send';
+
 
 export default function MainContent() {
+
+    // const [inputData, setInputData] = useState('')
+    // const chartData = []
+
+    // function SubmitInputForm(e) {
+    //     e.preventDefault()
+    //     chartData.push(inputData)
+    //     console.log(chartData)
+    // }
+
+    const initialList = []
+
+    const [chartData, setChartData] = useState(initialList);
+    const [inputData, setInputData] = useState('')
+
+    function SubmitInputForm(e) {
+        e.preventDefault()
+        if (inputData !== "") {
+            const newList = chartData.concat(inputData);
+            setChartData(newList);
+            setInputData("");
+        }
+    }
+
     return (
         <div style={{ width: "100%", height: "100vh", background: "#35373F" }}>
             <div className="px-2 pt-3">
@@ -61,38 +93,62 @@ export default function MainContent() {
                 </div>
                 <hr style={{ height: "2px", background: "black" }} />
                 <div className="fixed-bottom" style={{ marginLeft: "302px" }}>
-                    <img className="mx-3" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="#ImgNotFound" style={{ borderRadius: "100%", width: "100px", height: "100px" }} />
+                    {(chartData.length === 0) ?
+                        <>
+                            <img className="mx-3" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="#ImgNotFound" style={{ borderRadius: "100%", width: "100px", height: "100px" }} />
 
-                    <h2 className="mx-3 text-white">
-                        <b>Username</b>
-                    </h2>
+                            <h2 className="mx-3 text-white">
+                                <b>Username</b>
+                            </h2>
 
-                    <div className="mx-2 row" style={{ maxWidth: "600px" }}>
-                        <p className="addFriendBtnText" style={{ fontSize: "16px" }}>This is the beginning of tour direct message history with @username</p>
-                    </div>
+                            <div className="mx-2 row" style={{ maxWidth: "600px" }}>
+                                <p className="addFriendBtnText" style={{ fontSize: "16px" }}>This is the beginning of tour direct message history with @username</p>
+                            </div>
 
-                    <div className="mx-2 row" style={{ maxWidth: "500px" }}>
-                        <div className="col-3 col-lg-1">
-                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="#ImgNotFOund" style={{ width: "25px", borderRadius: "100%" }} />
-                        </div>
-                        <div className="col-9 col-lg-3">
-                            <p className="addFriendBtnText" style={{ fontSize: "14px" }}>1 Mutual Server</p>
-                        </div>
-                        <div className="col-lg-3 hideAfterLGScrn">
-                            <button type="button" className="btn w-100" style={{ background: '#4752C4', color: "white", fontSize: "10px" }}>Add Friend</button>
-                        </div>
-                        <div className="col-lg-2 hideAfterLGScrn">
-                            <button type="button" className="btn w-100" style={{ background: '#686D73', color: "white", fontSize: "10px" }}>Block</button>
-                        </div>
-                        <div className="col-lg-3 hideAfterLGScrn">
-                            <button type="button" className="btn w-100" style={{ background: '#8C565A', color: "white", fontSize: "10px" }}>Report Spam</button>
-                        </div>
-                    </div>
+                            <div className="mx-2 row" style={{ maxWidth: "500px" }}>
+                                <div className="col-3 col-lg-1">
+                                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="#ImgNotFOund" style={{ width: "25px", borderRadius: "100%" }} />
+                                </div>
+                                <div className="col-9 col-lg-3">
+                                    <p className="addFriendBtnText" style={{ fontSize: "14px" }}>1 Mutual Server</p>
+                                </div>
+                                <div className="col-lg-3 hideAfterLGScrn">
+                                    <button type="button" className="btn w-100" style={{ background: '#4752C4', color: "white", fontSize: "10px" }}>Add Friend</button>
+                                </div>
+                                <div className="col-lg-2 hideAfterLGScrn">
+                                    <button type="button" className="btn w-100" style={{ background: '#686D73', color: "white", fontSize: "10px" }}>Block</button>
+                                </div>
+                                <div className="col-lg-3 hideAfterLGScrn">
+                                    <button type="button" className="btn w-100" style={{ background: '#8C565A', color: "white", fontSize: "10px" }}>Report Spam</button>
+                                </div>
+                            </div>
 
-                    <img src="https://c.tenor.com/l-ltKxPNF-gAAAAM/wumpus-discord.gif" alt="#ImgNotFound" width="120px" height="150px" style={{ marginLeft: "50px" }} />
-                    <br />
+                            <img src="https://c.tenor.com/l-ltKxPNF-gAAAAM/wumpus-discord.gif" alt="#ImgNotFound" width="120px" height="150px" style={{ marginLeft: "50px" }} />
+                            <br />
 
-                    <button type="button" className="px-5 mx-2 mb-4 btn" style={{ background: '#4752C4', color: "white" }}>Wave to Username</button>
+                            <button type="button" className="px-5 mx-2 mb-4 btn" style={{ background: '#4752C4', color: "white" }}>Wave to Username</button>
+                        </>
+                        :
+                        <>
+                            {/* <h4 className="text-white"> */}
+                            {/* {chartData[0]} */}
+                            {/* </h4> */}
+                            {
+                                chartData.map((chartData, i) =>
+                                    <>
+                                        {/* <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="#ImgNotFOund" width="20px" />
+                                     <h5 className="px-2 text-white">{chartData}</h5> */}
+                                        <MenuItem>
+                                            <ListItemIcon>
+                                                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="#ImgNotFOund" width="30px" style={{ borderRadius: '100%' }} />
+                                            </ListItemIcon>
+                                            <h6 className="text-white pt-1">{chartData}</h6>
+                                        </MenuItem>
+                                    </>
+                                )
+                            }
+                        </>
+                    }
 
                     <div className="mx-2 mb-3">
                         {/* <input type="text" className="form-control" placeholder="Message @Username" style={{background:'#40444B', border:'0'}} /> */}
@@ -103,7 +159,9 @@ export default function MainContent() {
                                 />
                             </span>
                             {/* <input type="text" className="form-control is-invalid" placeholder="Username" /> */}
-                            <input type="text" className="p-2 form-control" placeholder="Message @Username" style={{ background: '#40444B', border: '0' }} />
+                            <form onSubmit={(e) => SubmitInputForm(e)} className="form-control p-0" style={{ border: "0" }}>
+                                <input type="text" className="p-2 form-control" placeholder="Message @Username" style={{ background: '#40444B', border: '0', borderRadius: "0", color: "white" }} value={inputData} onChange={(e) => setInputData(e.target.value)} />
+                            </form>
                             <span className="input-group-text" style={{ background: '#40444B', border: "0" }}>
                                 <FontAwesomeIcon
                                     icon={faGift} style={{ color: "#FFFFFF" }}

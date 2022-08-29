@@ -2,6 +2,10 @@
     overflow: hidden;
 }
 
+.leftSidebar2::-webkit-scrollbar {
+    display: none;
+}
+
 .LeftSideBtn {
     color: forestgreen;
     background: #36393F;
