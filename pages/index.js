@@ -1,27 +1,22 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import MainContent from '../Components/Homepage/MainContent'
+import Header from '../Components/Header/Header'
 import LeftSidebar from '../Components/LeftSidebar/LeftSidebar'
 import LeftSidebar2 from '../Components/LeftSidebar/LeftSidebar2'
+import MainContent from '../Components/MainContent/MainContent'
 
 export default function Home() {
   return (
-    <>
-      <div className="row">
-        <div className="col-2">
-          <div style={{ position: "absolute" }}>
-            <LeftSidebar />
-          </div>
-          <div style={{ position: "absolute", marginLeft: "72px" }}>
-            <LeftSidebar2 />
-          </div>
-        </div>
-        <div className="col-10" style={{ marginLeft: "302px", paddingRight:"0", marginRight:"0" }}>
-          <div style={{maxWidth:"100%", width:"auto"}}>
-          <MainContent />
-          </div>
-        </div>
+    <div className='p-0 m-0'>
+      <div style={{ position: "absolute" }}>
+        <LeftSidebar />
       </div>
-    </>
+      <div style={{ marginLeft: "72px", position: "absolute" }}>
+        <LeftSidebar2 />
+      </div>
+      <div style={{ marginLeft: "302px", paddingRight: "0", marginRight: "0" }}>
+        <MainContent />
+      </div>
+    </div>
   )
 }

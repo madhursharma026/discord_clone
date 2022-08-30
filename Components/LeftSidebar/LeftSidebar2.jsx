@@ -6,11 +6,27 @@ import { useRouter } from 'next/router'
 // import the icons you need
 import {
     faUser,
-    faPlus,
     faAngleRight,
     faEdit,
     faAngleDown,
-    faBullhorn
+    faBullhorn,
+    faNewspaper,
+    faBookOpen,
+    faHashtag,
+    faQuestion,
+    faBook,
+    faRobot,
+    faMessage,
+    faMugHot,
+    faFire,
+    faEarth,
+    faSmile,
+    faSuitcase,
+    faDollar,
+    faShield,
+    faFileAudio,
+    faLaptop,
+    faUserPlus
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 
@@ -37,12 +53,13 @@ export default function LeftSidebar2() {
         router.push("menuData")
     }
 
+    function ChangeTopHomepageRoute() {
+        router.push("/")
+    }
+
 
     return (
         <div className='leftSidebar2' style={{ width: "230px", height: "100vh", background: "#2F3136", overflowY: "scroll" }}>
-            {/* <div className="px-2 pt-3">
-                <input type="text" className="form-control" placeholder='Find or start a conversation' style={{ height: "28px", width: "98%", borderRadius: "5px", background: "#202225", border: "0", color: "#C0C0C0", fontSize: "14px" }} />
-            </div> */}
             <img src="https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/main_image_star-forming_region_carina_nircam_final-1280.jpg" alt="#ImgNotFound" width="100%" />
 
             <div className="row px-2 pt-2">
@@ -64,31 +81,6 @@ export default function LeftSidebar2() {
 
             <hr style={{ height: "2px", background: "black" }} />
 
-            {/* <button type="button" className="mx-2 btn addFriendBtn" style={{ width: "90%", textAlign: "left", border: "0" }}>
-                <FontAwesomeIcon
-                    icon={faEdit} className="addFriendBtnText" style={{ fontSize: "14px" }}
-                /> <span className="addFriendBtnText" style={{ fontSize: "14px" }}> |
-                    Friend</span>
-            </button>
-
-            <div className="mx-2 mt-3 row" style={{ fontSize: "12px" }}>
-                <div className="col-10 addFriendBtnText">
-                    DIRECT MESSAGES
-                </div>
-                <div className="col-2 addFriendBtnText" style={{ fontSize: "12px" }}>
-                    <FontAwesomeIcon
-                        icon={faPlus} className="addFriendBtnText"
-                    />
-                </div>
-            </div>
-
-            <div className="mx-3 mt-2 userDetail">
-                <button type="button" className="btn btn-dark">
-                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="#ImgNotFound" style={{ width: "30px", height: "30px", borderRadius: "100%" }} />
-                    &ensp;Username Details
-                </button>
-            </div> */}
-
             <button className="accordion1 w-100 addFriendBtn mt-2" onClick={() => showAccordionDataValue1()} style={{ textAlign: "left", background: "transparent", border: "0", color: "#DCDDDE" }}>
                 {!showAccordionData1 ?
                     <FontAwesomeIcon
@@ -108,8 +100,8 @@ export default function LeftSidebar2() {
                 </span>
             </button>
             <div style={{ display: `${showAccordionData1 ? "block" : "none"}` }}>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
                             icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
@@ -118,78 +110,106 @@ export default function LeftSidebar2() {
                             icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
                         &nbsp; announcement
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
                             icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faNewspaper} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; javascript-news
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faNewspaper} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faUser} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; rules
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faBookOpen} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; Information
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faQuestion} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; qotd
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faBook} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; resources
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faRobot} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; bot-updates
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
             </div>
@@ -207,83 +227,107 @@ export default function LeftSidebar2() {
                 &nbsp;
                 <span className="addFriendBtnText" style={{ fontSize: "15px" }}>
                     <FontAwesomeIcon
-                        icon={faEdit} className="addFriendBtnText" style={{ fontSize: "14px", color: "white" }}
+                        icon={faMessage} className="addFriendBtnText" style={{ fontSize: "14px", color: "white" }}
                     />
-                    <span className="addFriendBtnText" style={{ fontSize: "14px" }}> | IMPORTANT </span>
+                    <span className="addFriendBtnText" style={{ fontSize: "14px" }}> | Chat </span>
                 </span>
             </button>
             <div style={{ display: `${showAccordionData2 ? "block" : "none"}` }}>
 
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangeTopHomepageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faMugHot} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; general
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faFire} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; off-topic
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faEarth} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; global-chat
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faSmile} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; memes
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faRobot} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; bot-commands
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faSuitcase} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; projects
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
             </div>
@@ -301,83 +345,104 @@ export default function LeftSidebar2() {
                 &nbsp;
                 <span className="addFriendBtnText" style={{ fontSize: "15px" }}>
                     <FontAwesomeIcon
-                        icon={faEdit} className="addFriendBtnText" style={{ fontSize: "14px", color: "white" }}
+                        icon={faLaptop} className="addFriendBtnText" style={{ fontSize: "14px", color: "white" }}
                     />
-                    <span className="addFriendBtnText" style={{ fontSize: "14px" }}> | IMPORTANT </span>
+                    <span className="addFriendBtnText" style={{ fontSize: "14px" }}> | Suggestion </span>
                 </span>
             </button>
             <div style={{ display: `${showAccordionData3 ? "block" : "none"}` }}>
 
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faDollar} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; Looking-for-jobs
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faDollar} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; recruiting
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faShield} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; gateway
+
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; data-general
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; discord-js
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
-                <div className="mx-2 mt-1 userDetail mb-5">
-                    <button type="button" className="btn btn-dark p-1 w-100" style={{ fontSize: "14px", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
+                <div className="mx-2 mt-1 menuBtn mb-5" style={{ borderRadius: "5px" }}>
+                    <button type="button" className="btn p-1 menuBtnData w-100" style={{ fontSize: "14px", color: "#b9b9b9", borderRadius: "5px", border: "0", fontWeight: '600', textAlign: "left" }} onClick={() => ChangePageRoute()}>
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px" }}
+                            icon={faHashtag} className="addFriendBtnText" style={{ fontSize: "12px" }}
                         />
                         &ensp;
                         <FontAwesomeIcon
-                            icon={faBullhorn} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
+                            icon={faFileAudio} className="addFriendBtnText" style={{ fontSize: "12px", color: "white" }}
                         />
-                        &nbsp; announcement
+                        &nbsp; voice
+                        <FontAwesomeIcon
+                            icon={faUserPlus} className="userplus pt-1" style={{ fontSize: "12px", color: "white", float: "right" }}
+                        />
                     </button>
                 </div>
             </div>
