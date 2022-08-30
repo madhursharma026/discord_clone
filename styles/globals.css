@@ -18,6 +18,10 @@
   display: none;
 }
 
+.ProfileLeftMenu::-webkit-scrollbar {
+  display: none;
+}
+
 .mainContent::-webkit-scrollbar {
   display: none;
 }
@@ -63,5 +67,59 @@
 
   .faUserFriends {
     display: none;
+  }
+}
+
+@media (min-width: 500px) {
+  .menuLeftMarginShift{
+    margin-left: 10px;
+  }
+  .menuRightMarginShift{
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 700px) {
+  .menuLeftMarginShift{
+    margin-left: 100px;
+  }
+  .menuRightMarginShift{
+    margin-right: 50px;
+  }
+}
+
+@media (min-width: 950px) {
+  .menuLeftMarginShift{
+    margin-left: 200px;
+  }
+  .menuRightMarginShift{
+    margin-right: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menuLeftMarginShift{
+    margin-left: 300px;
+  }
+  .menuRightMarginShift{
+    margin-right: 200px;
+  }
+}
+
+@media (min-width: 1450px) {
+  .menuLeftMarginShift{
+    margin-left: 400px;
+  }
+  .menuRightMarginShift{
+    margin-right: 300px;
+  }
+}
+
+@media (min-width: 1650px) {
+  .menuLeftMarginShift{
+    margin-left: 500px;
+  }
+  .menuRightMarginShift{
+    margin-right: 400px;
   }
 }

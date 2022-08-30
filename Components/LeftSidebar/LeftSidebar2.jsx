@@ -26,7 +26,10 @@ import {
     faShield,
     faFileAudio,
     faLaptop,
-    faUserPlus
+    faUserPlus,
+    faMicrophoneAltSlash,
+    faHeadphones,
+    faGear
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 
@@ -55,6 +58,10 @@ export default function LeftSidebar2() {
 
     function ChangeTopHomepageRoute() {
         router.push("/")
+    }
+
+    function openProfilePage() {
+        router.push('profile')
     }
 
 
@@ -446,6 +453,23 @@ export default function LeftSidebar2() {
                     </button>
                 </div>
             </div>
+            <button className="fixed-bottom addFriendBtn mt-2 py-2" onClick={() => openProfilePage()} style={{ textAlign: "left", background: "#3B3E45", border: "0", color: "#DCDDDE", marginLeft: "72px", width: "230px" }}>
+                <span style={{ fontSize: "15px" }}>
+                    <img src="https://i.pinimg.com/originals/b9/8f/c0/b98fc0d6b5165373cf185973e9627922.jpg" alt="#ImgNotFound" width="30px" height="30px" style={{ borderRadius: "100%" }} />
+                    <span className="text-white" style={{ fontSize: "14px", paddingLeft: "3px" }}><b>Username</b></span>
+                    <span className="moreIcon" style={{ float: "right" }}>
+                        <FontAwesomeIcon
+                            icon={faMicrophoneAltSlash} style={{ fontSize: "12px", color: "white" }}
+                        />
+                        <FontAwesomeIcon
+                            icon={faHeadphones} className="px-2" style={{ fontSize: "12px", color: "white" }}
+                        />
+                        <FontAwesomeIcon
+                            icon={faGear} style={{ fontSize: "12px", color: "white" }}
+                        />
+                    </span>
+                </span>
+            </button>
         </div>
     )
 }

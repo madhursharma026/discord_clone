@@ -164,7 +164,7 @@ export default function MainContent() {
                     }
                     <>
                         <div className="fixed-bottom" style={{ marginLeft: "308px", marginRight: "6px" }}>
-                            <div className="input-group">
+                            <div className="input-group mb-2">
                                 <span className="input-group-text" style={{ background: '#40444B', border: "0" }}>
                                     <FontAwesomeIcon
                                         icon={faPlus} style={{ background: "#DCDDDE", borderRadius: "100%", padding: "1px" }}
