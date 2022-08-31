@@ -25,7 +25,7 @@ export default function Profile() {
     useEffect(() => {
         const interval = setInterval(() => {
             setOpenPageStyle(false)
-        }, 10)
+        }, 80)
     });
 
     return (
